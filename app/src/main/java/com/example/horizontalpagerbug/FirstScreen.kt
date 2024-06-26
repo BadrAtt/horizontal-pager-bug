@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PageSize
 import androidx.compose.foundation.pager.rememberPagerState
@@ -35,42 +36,16 @@ import androidx.compose.ui.unit.dp
 fun FirstScreen() {
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .wrapContentHeight()
             .background(Color.White)
     ) {
-        Box(modifier = Modifier.fillMaxSize()) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(30.dp)
-                    .background(Color.Yellow)
+        repeat(100) {
+            Text(
+                modifier = Modifier.padding(vertical = 10.dp),
+                text = "This is a Text",
+                style = TextStyle.Default,
+                fontWeight = FontWeight.Bold
             )
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .clip(
-                        RoundedCornerShape(
-                            topStart = 24.dp,
-                            topEnd = 24.dp
-                        )
-                    )
-                    .background(
-                        color = Color.White
-                    )
-                    .padding(top = 32.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                Column {
-                    repeat(15) {
-                        Text(
-                            modifier = Modifier.padding(vertical = 10.dp),
-                            text = "This is a Text",
-                            style = TextStyle.Default,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
-                }
-            }
         }
     }
 }

@@ -54,7 +54,8 @@ class MainActivity : ComponentActivity() {
                     HorizontalPager(
                         state = pagerState,
                         pageSize = PageSize.Fill,
-                        userScrollEnabled = true
+                        userScrollEnabled = true,
+                        beyondBoundsPageCount = 1,
                     ) {
                         if (it == 0) {
                             FirstScreen()
